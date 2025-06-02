@@ -4,10 +4,10 @@ This repository contains the full-stack application for a simple Library Managem
 
 ## Team Members
 
-- **Eyosyas** – Backend Developer  
-- **Ayele** – Backend Developer  
-- **Firezer** – Frontend Developer  
-- **Lamrot** – Frontend Developer  
+- **Eyosyas yoseph 1501193** – Backend Developer  
+- **Ayele yinesu 1501014** – Backend Developer  
+- **Firezer settual 1501744** – Frontend Developer  
+- **Lamrot girma 1501316** – Frontend Developer  
 
 ## Features
 

@@ -45,9 +45,6 @@ This repository contains the full-stack application for a simple Library Managem
 * **Routing:** React Router DOM
 * **HTTP Client:** Axios
 ## Getting Started
-
-Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
-
 ### Prerequisites
 
 Before you begin, ensure you have the following installed:
@@ -60,83 +57,6 @@ Before you begin, ensure you have the following installed:
     * [SSMS Download](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms)
     * [Azure Data Studio Download](https://docs.microsoft.com/en-us/sql/azure-data-studio/download-azure-data-studio)
 
-### Backend Setup
-
-1.  **Clone the repository:**
-    ```bash
-    git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
-    cd your-repo-name
-    ```
-2.  **Navigate to the backend project:**
-    ```bash
-    cd LibraryWebAPI # Assuming your backend project is directly in LibraryWebAPI folder
-    ```
-3.  **Configure Database Connection:**
-    * Open `appsettings.json` (and `appsettings.Development.json` if applicable).
-    * Update the `ConnectionStrings:DefaultConnection` to match your SQL Server instance.
-        ```json
-        // appsettings.json
-        "ConnectionStrings": {
-          "DefaultConnection": "Server=(localdb)\\MSSQLLocalDB;Database=MyAwesomeLibraryDb;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True"
-        },
-        "Jwt": {
-            "Key": "ThisIsAVeryStrongSecretKeyForJWTAuthenticationWhichShouldBeAtLeast32CharactersLongAndVerySecure",
-            "Issuer": "LibraryWebAPI",
-            "Audience": "LibraryAppUsers", // Ensure this matches your frontend configuration
-            "ExpireHours": 1
-        }
-        ```
-    * **Important:** Replace `MyAwesomeLibraryDb` with your desired database name if it's different.
-    * Ensure your `Jwt:Key` is strong and secret (the one in the example is good).
-    * Verify `Jwt:Issuer` and `Jwt:Audience` match your frontend's expected values.
-
-4.  **Apply Migrations and Create Database:**
-    ```bash
-    dotnet ef database update
-    ```
-    This command will create the database (if it doesn't exist) and apply all pending migrations, setting up your tables.
-
-5.  **Run the Backend:**
-    * **Using VS Code:**
-        * Open the `LibraryWebAPI` folder in VS Code.
-        * Go to the "Run and Debug" view (Ctrl+Shift+D).
-        * Select the desired launch profile (e.g., "http" for `http://localhost:5291` or "https" for `https://localhost:7003`).
-        * Press `F5` to start debugging.
-    * **From Terminal (HTTP):**
-        ```bash
-        dotnet run --launch-profile "http"
-        ```
-        The API will typically run on `http://localhost:5291`.
-    * **From Terminal (HTTPS):**
-        ```bash
-        dotnet run --launch-profile "https"
-        ```
-        The API will typically run on `https://localhost:7003`.
-
-    The Swagger UI will be available at `/swagger` (e.g., `http://localhost:5291/swagger` or `https://localhost:7003/swagger`).
-
-### Frontend Setup
-
-1.  **Navigate to the frontend project:**
-    ```bash
-    cd ../frontend # Assuming your frontend project is in a 'frontend' folder next to 'LibraryWebAPI'
-    ```
-2.  **Install dependencies:**
-    ```bash
-    npm install
-    ```
-3.  **Configure API Base URL:**
-    * Open your API configuration file (e.g., `src/api.js` or `src/axiosInstance.js`).
-    * Ensure `API_BASE_URL` matches the URL of your running backend.
-        ```javascript
-        // src/api.js
-        const API_BASE_URL = 'http://localhost:5291/api'; // Or 'https://localhost:7003/api' if using HTTPS
-        ```
-4.  **Run the Frontend:**
-    ```bash
-    npm start
-    ```
-    The React development server will start, typically on `http://localhost:3000`, and your browser will open automatically.
 
 ## API Endpoints
 
